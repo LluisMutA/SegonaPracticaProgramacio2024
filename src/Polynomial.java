@@ -3,7 +3,8 @@ import java.util.Arrays;
 
 public class Polynomial {
     public Polynomial(float[] cfs) {
-        float[] coef = cfs;
+
+
        /* for (float i = 0; i < coef.length/2; i++) {
             float j = coef.length-i-1;
             float a = coef[(int) i];
@@ -11,13 +12,26 @@ public class Polynomial {
             coef[(int) i] = b;
             coef[(int) j] = a;
         }*/
-        int elevat = coef.length;
-        for (int i = 0; i < coef.length-1; i++) {
-            System.out.println(Arrays.toString(coef));
+        float[] coef = cfs;
+        float grau = cfs.length-1;
+        for (int i = 0; i < cfs.length-1; i++) {
+            if(cfs[i] < 1){
+                cfs[i] = Float.parseFloat("x");
+            } else if (cfs[i] == 0) {
+                continue;
+            } else if (cfs[i] > 1) {
+                cfs[i] = Float.parseFloat(coef[i] + "^" + grau);
+            }
+            System.out.println(Arrays.toString(cfs));
         }
-
-       // System.out.println(Arrays.toString(coef));
     }
+    // variable per guardar el polinomi
+    // guardar el valor dels nombres: 3x^3-4x^2-X-3 -->> 3 - 4 - 2 - 1 - 3
+    //  Array de floats
+    //  cercar numeros per char, sin son numeros, Integer.parseFloat.
+    // Guardarlos en un array gran
+
+    // Feim 2 pasades llegins els exponents, l'exponent mes gran+1 sera el tamany de l'array
 
     public Polynomial() {
 

@@ -12,6 +12,27 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{1, 5});
         assertEquals("x + 5", p.toString());
 
+        p = new Polynomial(new float[]{1, 1, 1});
+        assertEquals("x^2 + x + 1", p.toString());
+
+        p = new Polynomial(new float[]{1, 0, 1});
+        assertEquals("x^2 + 1", p.toString());
+
+        p = new Polynomial(new float[]{-1, -1});
+        assertEquals("-x - 1", p.toString());
+
+        p = new Polynomial(new float[]{0, 1, 4});
+        assertEquals("x + 4", p.toString());
+
+        p = new Polynomial(new float[]{13456, 694, 999, -500, 0});
+        assertEquals("13456x^4 + 694x^3 + 999x^2 - 500x", p.toString());
+
+        p = new Polynomial(new float[]{9, 9, 9});
+        assertEquals("9x^2 + 9x + 9", p.toString());
+
+        p = new Polynomial(new float[]{-654, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, -6});
+        assertEquals("-654x^20 + 9x^3 - 6", p.toString());
+
         p = new Polynomial(new float[]{0});
         assertEquals("0", p.toString());
 
