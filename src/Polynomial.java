@@ -3,28 +3,27 @@ import java.util.Arrays;
 
 public class Polynomial {
     public Polynomial(float[] cfs) {
+        this.cfs = cfs;
+    }
+    float[] cfs;
 
+       /* for (float i = 0; i < cfs.length/2; i++) {
+            float j = cfs.length-i-1;
+            float a = cfs[(int) i];
+            float b = cfs[(int) j];
+            cfs[(int) i] = b;
+            cfs[(int) j] = a;
+        }
 
-       /* for (float i = 0; i < coef.length/2; i++) {
-            float j = coef.length-i-1;
-            float a = coef[(int) i];
-            float b = coef[(int) j];
-            coef[(int) i] = b;
-            coef[(int) j] = a;
-        }*/
-        float[] coef = cfs;
-        float grau = cfs.length-1;
-        for (int i = 0; i < cfs.length-1; i++) {
             if(cfs[i] < 1){
-                cfs[i] = Float.parseFloat("x");
+                cfs[i] = Float.parseFloat(cfs[i]+"x");
             } else if (cfs[i] == 0) {
                 continue;
             } else if (cfs[i] > 1) {
                 cfs[i] = Float.parseFloat(coef[i] + "^" + grau);
             }
-            System.out.println(Arrays.toString(cfs));
-        }
-    }
+            System.out.println(Arrays.toString(cfs));*/
+
     // variable per guardar el polinomi
     // guardar el valor dels nombres: 3x^3-4x^2-X-3 -->> 3 - 4 - 2 - 1 - 3
     //  Array de floats
@@ -60,11 +59,32 @@ public class Polynomial {
     
     @Override
     public boolean equals(Object o) {
-        return false;
+        // diu si dos polinomis son iguals
+        return this.toString().equals(o.toString());
     }
 
     @Override
     public String toString() {
-        return "";
+        // coeficients a string
+        float[] coef = cfs;
+        String resultat = "";
+        int grau = cfs.length-1;
+        for (int i = 0; i < cfs.length-1; i++, grau--) {
+            int num = (int)cfs[i];
+            float terme = cfs[i];
+            if (grau == 0) {
+                // escrivim num
+                resultat += num;
+            } else if (terme == 1) {
+                // no hem d'escriure 1
+                resultat += "x";
+            } else {
+                resultat += num + "x";
+                if (grau > 1) {
+                    resultat += "^"+grau;
+                }
+            }
+        }
+        return resultat;
     }
 }
