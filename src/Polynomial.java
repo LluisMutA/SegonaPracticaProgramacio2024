@@ -3,6 +3,9 @@ import java.util.Arrays;
 
 public class Polynomial {
     public Polynomial(float[] cfs) {
+        // TODO: Abans d'emmagatzemar els coeficients, eliminar els zeros de l'esquerra:
+        // EX; [0,0,5,6,0] --> [5,6,0]
+
         this.cfs = cfs;
     }
     float[] cfs;
@@ -68,23 +71,57 @@ public class Polynomial {
         // coeficients a string
         float[] coef = cfs;
         String resultat = "";
-        int grau = cfs.length-1;
-        for (int i = 0; i < cfs.length-1; i++, grau--) {
-            int num = (int)cfs[i];
+        int grau = cfs.length-1; // Grau te el valor màxim per defecte si te 4 de llarg, te valor 4
+        int elevat = grau - (grau-1); // Elevat te valor 1 i es pot usar per aumentar el graus elevat++
+        for (int i = 0; i <= cfs.length-1; i++, grau--) {
             float terme = cfs[i];
-            if (grau == 0) {
-                // escrivim num
-                resultat += num;
-            } else if (terme == 1) {
-                // no hem d'escriure 1
-                resultat += "x";
-            } else {
-                resultat += num + "x";
-                if (grau > 1) {
-                    resultat += "^"+grau;
+            if (i != 0) {
+                // No és la primera posició
+                if (i == 0 && terme == 0) {
+
+                } else if (terme == 0)
+                    continue;
+                if (terme < 0) {
+                    resultat += " - ";
+                    terme *= -1;
+                } else {
+                    resultat += " + ";
                 }
             }
-        }
-        return resultat;
+            if (i == 0 && terme < 0) {
+                // Si és la primera posició i num es negatiu
+                resultat += "-";
+                terme *= -1;
+            }
+
+           /* if (terme == 0 && grau > 1) {
+                resultat += (int) terme + "x^" + grau;
+            } else if (terme == 1 && grau > 1) {
+                resultat += "x^" + grau;
+            } else if (terme == 0) {
+                continue;
+            } else {
+                resultat += (int) terme + "x^" + grau;
+            }*/
+
+            if (grau == 0) {
+                // escrivim num
+                resultat += (int) terme;
+            } else if (terme == 1 && grau != 1) {
+                // no hem d'escriure 1
+                resultat += "x" + "^" + grau;
+            } else if (terme == 0 && grau == 1) {
+                continue;
+            } else if (terme == 0 && grau > 1) {
+                continue;
+            } else {
+                resultat += "x";
+                if (grau > 1 && terme != 0) {
+                    resultat += ((int) terme) + "x" + "^" + grau;
+                } else if (terme == 0) {
+                    continue;
+                }
+            }
+        }return resultat;
     }
 }

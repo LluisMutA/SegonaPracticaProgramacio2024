@@ -12,6 +12,9 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{1, 5});
         assertEquals("x + 5", p.toString());
 
+        p = new Polynomial(new float[]{1, -5});
+        assertEquals("x - 5", p.toString());
+
         p = new Polynomial(new float[]{1, 1, 1});
         assertEquals("x^2 + x + 1", p.toString());
 
