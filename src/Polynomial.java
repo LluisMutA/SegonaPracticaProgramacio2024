@@ -10,6 +10,9 @@ public class Polynomial {
     }
     float[] cfs;
 
+    // s s.replaceAll(regex "\\s", replacement "");
+    // String[] ar = s.split(regex: "(?=[-+])"); --> Constructe 2
+
        /* for (float i = 0; i < cfs.length/2; i++) {
             float j = cfs.length-i-1;
             float a = cfs[(int) i];
@@ -94,7 +97,21 @@ public class Polynomial {
                 terme *= -1;
             }
 
-           /* if (terme == 0 && grau > 1) {
+            if (grau == 0){
+                resultat += (int) terme;
+            }else if(terme == 1 && grau == 1){
+                resultat += "x";
+            }else if(terme == 1 && grau > 1){
+                resultat += "x^" + grau;
+            }else resultat += (int) terme + "x^" + grau;
+
+           // else if(terme > 1 && grau ==1){
+           //     resultat += (int) terme + "x";
+           // }
+
+
+
+            /*if (terme == 0 && grau > 1) {
                 resultat += (int) terme + "x^" + grau;
             } else if (terme == 1 && grau > 1) {
                 resultat += "x^" + grau;
@@ -102,9 +119,9 @@ public class Polynomial {
                 continue;
             } else {
                 resultat += (int) terme + "x^" + grau;
-            }*/
+            }
 
-            if (grau == 0) {
+            /*if (grau == 0) {
                 // escrivim num
                 resultat += (int) terme;
             } else if (terme == 1 && grau != 1) {
@@ -121,7 +138,7 @@ public class Polynomial {
                 } else if (terme == 0) {
                     continue;
                 }
-            }
+            }*/
         }return resultat;
     }
 }

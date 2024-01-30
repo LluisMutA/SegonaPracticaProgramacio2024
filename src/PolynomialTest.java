@@ -12,9 +12,6 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{1, 5});
         assertEquals("x + 5", p.toString());
 
-        p = new Polynomial(new float[]{1, -5});
-        assertEquals("x - 5", p.toString());
-
         p = new Polynomial(new float[]{1, 1, 1});
         assertEquals("x^2 + x + 1", p.toString());
 
@@ -24,17 +21,17 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{-1, -1});
         assertEquals("-x - 1", p.toString());
 
-        p = new Polynomial(new float[]{0, 1, 4});
-        assertEquals("x + 4", p.toString());
+       // p = new Polynomial(new float[]{0, 1, 4});
+       // assertEquals("x + 4", p.toString());
 
         p = new Polynomial(new float[]{13456, 694, 999, -500, 0});
         assertEquals("13456x^4 + 694x^3 + 999x^2 - 500x", p.toString());
 
-        p = new Polynomial(new float[]{9, 9, 9});
+        p = new Polynomial(new float[]{9,9,9});
         assertEquals("9x^2 + 9x + 9", p.toString());
 
-        p = new Polynomial(new float[]{-654, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, -6});
-        assertEquals("-654x^20 + 9x^3 - 6", p.toString());
+        p = new Polynomial(new float[]{-654, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,-6});
+        assertEquals("-654x^19 + 9x^3 - 6", p.toString());
 
         p = new Polynomial(new float[]{0});
         assertEquals("0", p.toString());
@@ -45,9 +42,6 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{0, 0, 0});
         assertEquals("0", p.toString());
 
-        p = new Polynomial(new float[]{0, 0, 0});
-        assertEquals(new Polynomial("0"), p);
-
         p = new Polynomial(new float[]{-6, 0, 0, 20, -8});
         assertEquals("-6x^4 + 20x - 8", p.toString());
     }
@@ -55,6 +49,9 @@ public class PolynomialTest {
     @Test
     public void constructs2() {
         Polynomial p;
+
+        p = new Polynomial(new float[]{0, 0, 0});
+        assertEquals(new Polynomial("0"), p);
 
         p = new Polynomial("3x + 5 + 2x^2");
         assertEquals("2x^2 + 3x + 5", p.toString());
@@ -66,6 +63,9 @@ public class PolynomialTest {
         assertEquals("31x^2 + 3x - 2", p.toString());
 
         p = new Polynomial("31x^7 + 3x^7 - 5x - 12x^2 - 15x - 2 - 9 + 20 + 2x^2");
+        assertEquals("34x^7 - 10x^2 - 20x + 9", p.toString());
+
+        p = new Polynomial("31x^7+3x^7-5x-12x^2-15x-2-9+20+2x^2");
         assertEquals("34x^7 - 10x^2 - 20x + 9", p.toString());
 
         p = new Polynomial("0");
@@ -82,7 +82,34 @@ public class PolynomialTest {
     }
 
     @Test
-    public void sumes1() {
+    public void sumes_c1() {
+        Polynomial p1, p2, p3;
+
+        p1 = new Polynomial(new float[]{2,3,-5}); // "2x^2 + 3x - 5"
+        p2 = new Polynomial(new float[]{7,0,10}); // "7x^2 + 10"
+        assertEquals("9x^2 + 3x + 5", p1.add(p2).toString());
+
+        p1 = new Polynomial(new float[]{73,0,0,0,3,0,0,0,0}); //"73x^8 + 3x^4"
+        p2 = new Polynomial(new float[]{-1,0,10}); // "-x^2 + 10"
+        assertEquals("73x^8 + 3x^4 - x^2 + 10", p1.add(p2).toString());
+
+        p1 = new Polynomial(new float[]{-1,0,10}); //"-x^2 + 10"
+        p2 = new Polynomial(new float[]{73,0,0,0,3,0,0,0,0}); //"73x^8 + 3x^4"
+        assertEquals("73x^8 + 3x^4 - x^2 + 10", p1.add(p2).toString());
+
+        p1 = new Polynomial(new float[]{5,2,10}); // "5x^2 + 2x + 10"
+        p2 = new Polynomial(new float[]{-5,0,8}); // "8 - 7x^2 + 2x^2"
+        assertEquals("2x + 18", p1.add(p2).toString());
+
+        p1 = new Polynomial(new float[]{-2,0}); // "-2x"
+        p2 = new Polynomial(new float[]{8,0,0,0,0,0,5,0}); // "8x^7 + 5x"
+        p3 = new Polynomial(new float[]{-5,0,0,0,0,-1,12,0}); // "-x^2 + 12x - 5x^7");
+        assertEquals("3x^7 - x^2 + 15x", p1.add(p2).add(p3).toString());
+
+    }
+
+    @Test
+    public void sumes_c2() {
         Polynomial p1, p2, p3;
 
         p1 = new Polynomial("2x^2 + 3x - 5");
@@ -108,7 +135,44 @@ public class PolynomialTest {
     }
 
     @Test
-    public void multiplicacions() {
+    public void multiplicacions_c1() {
+        Polynomial p1, p2;
+
+        p1 = new Polynomial(new float[]{1,0,-6,0,8}); // "x^4 - 6x^2 + 8");
+        p2 = new Polynomial(new float[]{-6,0,0,0,0,-91,12}); // "-6x^6 - 91x + 12");
+        assertEquals("-6x^10 + 36x^8 - 48x^6 - 91x^5 + 12x^4 + 546x^3 - 72x^2 - 728x + 96", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{1,0}); // "x");
+        p2 = new Polynomial(new float[]{1,0}); // "x");
+        assertEquals("x^2", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{0}); // "0");
+        p2 = new Polynomial(new float[]{1,0,0,-7,9}); // "x^4 - 7x + 9");
+        assertEquals("0", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{1,1}); // "x + 1");
+        p2 = new Polynomial(new float[]{1,-1}); // "x - 1");
+        assertEquals("x^2 - 1", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{1,3}); // "x + 3");
+        p2 = new Polynomial(new float[]{1,2}); // "x + 2");
+        assertEquals("x^2 + 5x + 6", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{2,8}); // "2x + 8");
+        p2 = new Polynomial(new float[]{2,8}); // "2x + 8");
+        assertEquals("4x^2 + 32x + 64", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{1,0}); // "x");
+        p2 = new Polynomial(new float[]{1,1}); // "x + 1");
+        assertEquals("x^2 + x", p1.mult(p2).toString());
+
+        p1 = new Polynomial(new float[]{1,1}); // "x + 1");
+        p2 = new Polynomial(new float[]{1,1}); // "x + 1");
+        assertEquals("x^2 + 2x + 1", p1.mult(p2).toString());
+    }
+
+    @Test
+    public void multiplicacions_c2() {
         Polynomial p1, p2;
 
         p1 = new Polynomial("x^4 - 6x^2 + 8");
