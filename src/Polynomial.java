@@ -73,11 +73,19 @@ public class Polynomial {
     public String toString() {
         // coeficients a string
         float[] coef = cfs;
+        if (cfs == null){
+            return "0";
+        }
         String resultat = "";
         int grau = cfs.length-1; // Grau te el valor màxim per defecte si te 4 de llarg, te valor 4
         int elevat = grau - (grau-1); // Elevat te valor 1 i es pot usar per aumentar el graus elevat++
+
         for (int i = 0; i <= cfs.length-1; i++, grau--) {
             float terme = cfs[i];
+            if (cfs.length == 0 && grau == 0){
+                return "0";
+            }
+
             if (i != 0) {
                 // No és la primera posició
                 if (i == 0 && terme == 0) {
@@ -103,42 +111,40 @@ public class Polynomial {
                 resultat += "x";
             }else if(terme == 1 && grau > 1){
                 resultat += "x^" + grau;
+            }else if(terme > 1 && grau ==1){
+                resultat += (int) terme + "x";
             }else resultat += (int) terme + "x^" + grau;
 
-           // else if(terme > 1 && grau ==1){
-           //     resultat += (int) terme + "x";
-           // }
 
-
-
-            /*if (terme == 0 && grau > 1) {
-                resultat += (int) terme + "x^" + grau;
-            } else if (terme == 1 && grau > 1) {
-                resultat += "x^" + grau;
-            } else if (terme == 0) {
-                continue;
-            } else {
-                resultat += (int) terme + "x^" + grau;
-            }
-
-            /*if (grau == 0) {
-                // escrivim num
-                resultat += (int) terme;
-            } else if (terme == 1 && grau != 1) {
-                // no hem d'escriure 1
-                resultat += "x" + "^" + grau;
-            } else if (terme == 0 && grau == 1) {
-                continue;
-            } else if (terme == 0 && grau > 1) {
-                continue;
-            } else {
-                resultat += "x";
-                if (grau > 1 && terme != 0) {
-                    resultat += ((int) terme) + "x" + "^" + grau;
-                } else if (terme == 0) {
-                    continue;
-                }
-            }*/
         }return resultat;
     }
+
+        public static void eliminaCeros (String[] args) {
+            int[] array = {0, 0, 2, 5};
+            int nonZeroCount = 0;
+            // Contar la cantidad de elementos no cero
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != 0) {
+                    nonZeroCount++;
+                }
+            }
+            // Crear un nuevo array con los elementos no cero
+            int[] newArray = new int[nonZeroCount];
+            int index = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != 0) {
+                    newArray[index++] = array[i];
+                }
+            }
+            // Imprimir el nuevo array
+            for (int i : newArray) {
+                System.out.print(i + " ");
+            }
+        }
+
 }
+
+//Suma: ar1 = this.coef    Invertim ar1 i ar 2, sumar el petit al gros i girar el resultat i generar polinomi
+//      ar2 = p.coef
+//      ar3 <-- Suma
+// return Polynomi (ar3)

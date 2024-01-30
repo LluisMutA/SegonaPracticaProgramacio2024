@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="aiura">
+    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="Progreso">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
@@ -35,7 +35,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PolynomialTest.constructs1.executor": "Debug",
+    "JUnit.PolynomialTest.constructs1.executor": "Run",
     "JUnit.PolynomialTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -107,7 +107,31 @@
       <option name="project" value="LOCAL" />
       <updated>1706024829172</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="poc a poc">
+      <option name="closed" value="true" />
+      <created>1706208506285</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706208506285</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Progreso">
+      <option name="closed" value="true" />
+      <created>1706549055439</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706549055439</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Progreso">
+      <option name="closed" value="true" />
+      <created>1706625688341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706625688341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,7 +148,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Polinomis" />
     <MESSAGE value="aiura" />
-    <option name="LAST_COMMIT_MESSAGE" value="aiura" />
+    <MESSAGE value="poc a poc" />
+    <MESSAGE value="Progreso" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progreso" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -136,13 +162,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PolynomialTest.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Polynomial.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="14" />
+          <line>26</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
