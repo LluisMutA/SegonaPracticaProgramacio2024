@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="Progreso">
+    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="Test 1, menys 0">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolynomialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolynomialTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706625688341</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Test 1, menys 0">
+      <option name="closed" value="true" />
+      <created>1706628733347</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706628733347</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +159,8 @@
     <MESSAGE value="aiura" />
     <MESSAGE value="poc a poc" />
     <MESSAGE value="Progreso" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progreso" />
+    <MESSAGE value="Test 1, menys 0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test 1, menys 0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

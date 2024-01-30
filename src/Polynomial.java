@@ -6,7 +6,8 @@ public class Polynomial {
         // TODO: Abans d'emmagatzemar els coeficients, eliminar els zeros de l'esquerra:
         // EX; [0,0,5,6,0] --> [5,6,0]
 
-        this.cfs = cfs;
+        this.cfs = eliminarCeros(cfs);
+
     }
     float[] cfs;
 
@@ -118,30 +119,27 @@ public class Polynomial {
 
         }return resultat;
     }
-
-        public static void eliminaCeros (String[] args) {
-            int[] array = {0, 0, 2, 5};
-            int nonZeroCount = 0;
-            // Contar la cantidad de elementos no cero
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] != 0) {
-                    nonZeroCount++;
-                }
-            }
-            // Crear un nuevo array con los elementos no cero
-            int[] newArray = new int[nonZeroCount];
-            int index = 0;
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] != 0) {
-                    newArray[index++] = array[i];
-                }
-            }
-            // Imprimir el nuevo array
-            for (int i : newArray) {
-                System.out.print(i + " ");
+    private static float[] eliminarCeros(float[] coefs) {
+        int primerNoCero = 0;
+        // Encontrar el índice del primer elemento no cero
+        while (primerNoCero < coefs.length && coefs[primerNoCero] == 0) {
+            primerNoCero++;
+        }
+        boolean todosCeros = true;
+        for (float coef : coefs) {
+            if (coef != 0) {
+                todosCeros = false;
+                break;
             }
         }
-
+        if (todosCeros) {
+            return new float[]{0};
+        } else {
+            // Crear un nuevo array excluyendo los ceros iniciales
+            float[] res = Arrays.copyOfRange(coefs, primerNoCero, coefs.length);
+            return res;
+        }
+    }
 }
 
 //Suma: ar1 = this.coef    Invertim ar1 i ar 2, sumar el petit al gros i girar el resultat i generar polinomi

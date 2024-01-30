@@ -21,8 +21,8 @@ public class PolynomialTest {
         p = new Polynomial(new float[]{-1, -1});
         assertEquals("-x - 1", p.toString());
 
-       // p = new Polynomial(new float[]{0, 1, 4});
-       // assertEquals("x + 4", p.toString());
+        p = new Polynomial(new float[]{0, 1, 4});
+        assertEquals("x + 4", p.toString());
 
         p = new Polynomial(new float[]{13456, 694, 999, -500, 0});
         assertEquals("13456x^4 + 694x^3 + 999x^2 - 500x", p.toString());
