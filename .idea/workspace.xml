@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="Test 1, menys 0">
+    <list default="true" id="a90c3b15-3685-43b2-9c51-c88c8a479acf" name="Changes" comment="Test 1, done">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PolynomialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolynomialTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +35,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PolynomialTest.constructs1.executor": "Run",
+    "JUnit.PolynomialTest.constructs1.executor": "Debug",
     "JUnit.PolynomialTest.executor": "Run",
+    "JUnit.PolynomialTest.multiplicacions_c1.executor": "Debug",
+    "JUnit.PolynomialTest.multiplicacions_c2.executor": "Run",
+    "JUnit.PolynomialTest.sumes_c1.executor": "Debug",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -59,7 +61,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PolynomialTest.multiplicacions_c2">
     <configuration name="PolynomialTest.constructs1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica 2 programacio polinomis" />
       <option name="PACKAGE_NAME" value="" />
@@ -70,8 +72,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PolynomialTest.multiplicacions_c1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica 2 programacio polinomis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PolynomialTest" />
+      <option name="METHOD_NAME" value="multiplicacions_c1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolynomialTest.multiplicacions_c2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica 2 programacio polinomis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PolynomialTest" />
+      <option name="METHOD_NAME" value="multiplicacions_c2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolynomialTest.sumes_c1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica 2 programacio polinomis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PolynomialTest" />
+      <option name="METHOD_NAME" value="sumes_c1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PolynomialTest.multiplicacions_c2" />
+        <item itemvalue="JUnit.PolynomialTest.multiplicacions_c1" />
+        <item itemvalue="JUnit.PolynomialTest.sumes_c1" />
         <item itemvalue="JUnit.PolynomialTest.constructs1" />
       </list>
     </recent_temporary>
@@ -140,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706628733347</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Test 1, done">
+      <option name="closed" value="true" />
+      <created>1706629538534</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706629538534</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,7 +203,8 @@
     <MESSAGE value="poc a poc" />
     <MESSAGE value="Progreso" />
     <MESSAGE value="Test 1, menys 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test 1, menys 0" />
+    <MESSAGE value="Test 1, done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test 1, done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -172,8 +216,35 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PolynomialTest.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="21" />
+          <line>138</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Polynomial.java</url>
+          <line>33</line>
+          <properties class="Polynomial" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Polynomial.java</url>
+          <line>52</line>
+          <properties class="Polynomial" method="mult">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/PolynomialTest.java</url>
+          <line>174</line>
+          <properties class="PolynomialTest" method="multiplicacions_c2">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
